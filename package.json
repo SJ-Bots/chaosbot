@@ -1,0 +1,30 @@
+{
+  "name": "chaosbot",
+  "version": "1.0.0",
+  "description": "カオス顔團ロボット from SJ Bots",
+  "main": "bot.js",
+  "scripts": {
+    "test": "nodemon bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SJ-Bots/chaosbot.git"
+  },
+  "keywords": [
+    "chaos bot",
+    "カオス顔團ロボット",
+    "discord.js",
+    "node.js"
+  ],
+  "author": "結城あやの",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SJ-Bots/chaosbot/issues"
+  },
+  "homepage": "https://github.com/SJ-Bots/chaosbot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "dotenv": "^8.2.0",
+    "mysql": "^2.18.1"
+  }
+}
