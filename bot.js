@@ -46,7 +46,7 @@ chaos.on('ready', () => {
   console.log(`已登入使用者：${chaos.user.tag}\n作者：結城あやの`);
 });
 
-chaos.on('message', (msg) => {
+chaos.on('message', async (msg) => {
   const args = msg.content.slice(prefix.length).trim().split(/ +/);
   const commandName = args.shift().toLowerCase();
 
