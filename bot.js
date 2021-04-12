@@ -11,7 +11,7 @@ const address = process.env.address;
 const account = process.env.account;
 const password = process.env.password;
 const database = process.env.database;
-const notcommand = process.env.notcommand.toString();
+const notcommandchannel = process.env.notcommandchannel.toString();
 
 const connection = mysql.createConnection({
   host: address,
@@ -52,9 +52,12 @@ chaos.on('message', (msg) => {
 
   const command = chaos.commands.get(commandName) || chaos.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
+  let notcommand = msg.replace(`${prefix}`, '');
+
   if (!msg.content.startsWith(prefix) || msg.author.bot) {
-    return;
-    // if (msg.channel.id !== notcommand) msg.channel.send(`請至<#${notcommand}>使用`);
+    if (msg.channel.id !== notcommandchannel)
+      // msg.channel.send(`請至<#${notcommand}>使用`);
+      return;
     // else {
     // if (msg.content === '標我') chaos.commands.get('標我').execute(msg);
     // else if (msg.content === 'shig') chaos.commands.get('shig').execute(msg);
@@ -95,7 +98,7 @@ chaos.on('message', (msg) => {
     // else if (msg.content === '') chaos.commands.get('').execute(msg);
     // else return;
     // }
-  } else if (!command) return msg.channel.send(`沒有這條指令\`${msg.replace(${prefix}, '')}\``);
+  } else if (!command) return msg.channel.send(`沒有這條指令\`${notcommand}\``);
   else {
     if (command.guildOnly && msg.channel.type === 'dm') {
       return msg.reply('這條指令無法在DM執行!');
