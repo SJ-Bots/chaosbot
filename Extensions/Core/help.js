@@ -41,11 +41,11 @@ module.exports = {
         .send(data, { split: true })
         .then(() => {
           if (msg.channel.type === 'dm') return;
-          msg.reply('我已經將所有指令私訊給你');
+          msg.reply('我已經將該指令的詳細資訊私訊給你');
         })
         .catch((error) => {
-          console.error(`傳送指令列表給${msg.author.tag}失敗！\n`, error);
-          msg.reply('我無法將指令列表私訊給你！\n你是不是關閉了非好友私訊？');
+          console.error(`傳送該指令的詳細資訊給${msg.author.tag}失敗！\n`, error);
+          msg.reply('我無法將該指令的詳細資訊私訊給你！\n你是不是關閉了非好友私訊？');
         });
 
       // msg.channel.send(data, { split: true });
