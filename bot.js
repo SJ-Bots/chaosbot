@@ -55,8 +55,7 @@ chaos.on('message', (msg) => {
   if (!msg.content.startsWith(prefix) || msg.author.bot) {
     if (msg.channel.id !== notcommand) msg.channel.send(`請至<#${notcommand}>使用`);
     else {
-      return;
-      // if (msg.content === '標我') chaos.commands.get('標我').execute(msg);
+      if (msg.content === '標我') chaos.commands.get('標我').execute(msg);
       // else if (msg.content === 'shig') chaos.commands.get('shig').execute(msg);
       // else if (msg.content === 'ui') chaos.commands.get('ui').execute(msg);
       // else if (msg.content === 'skill') chaos.commands.get('skill').execute(msg);
@@ -93,7 +92,7 @@ chaos.on('message', (msg) => {
       // else if (msg.content === '') chaos.commands.get('').execute(msg);
       // else if (msg.content === '') chaos.commands.get('').execute(msg);
       // else if (msg.content === '') chaos.commands.get('').execute(msg);
-      // else return;
+      else return;
     }
   } else if (!command) return;
   else {
