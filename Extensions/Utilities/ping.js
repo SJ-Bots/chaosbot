@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
   name: 'ping',
   description: 'Ping!',
-  execute(msg, args, prefix, connection, command) {
+  async execute(msg, args, prefix, connection, command) {
     const waiting = await msg.channel.send('正在檢測延遲');
     const ping = new Discord.MessageEmbed()
       .setColor('RANDOM')

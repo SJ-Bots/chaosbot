@@ -2,6 +2,9 @@ const Discord = require('discord.js');
 const chaos = new Discord.Client();
 const fs = require('fs');
 const mysql = require('mysql');
+const Levels = require('discord-xp');
+const Canvacord = require('canvacord');
+const image = getImageSomehow();
 
 require('dotenv').config();
 
