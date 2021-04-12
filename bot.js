@@ -52,7 +52,7 @@ chaos.on('message', (msg) => {
 
   const command = chaos.commands.get(commandName) || chaos.commands.find((cmd) => cmd.aliases && cmd.aliases.includes(commandName));
 
-  let notcommand = msg.replace(`${prefix}`, '');
+  let notcommand = msg.content.replace(`${prefix}`, '');
 
   if (!msg.content.startsWith(prefix) || msg.author.bot) {
     if (msg.channel.id !== notcommandchannel)
