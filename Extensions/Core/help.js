@@ -37,6 +37,17 @@ module.exports = {
       if (command.usage) data.push(`**使用方法:**${prefix}${command.name} ${command.usage}`);
       if (command.cooldown) data.push(`**冷卻時間:**${command.cooldown}秒`);
 
+      return msg.author
+        .send(data, { split: true })
+        .then(() => {
+          if (msg.channel.type === 'dm') return;
+          msg.reply('我已經將所有指令私訊給你');
+        })
+        .catch((error) => {
+          console.error(`傳送指令列表給${msg.author.tag}失敗！\n`, error);
+          msg.reply('我無法將指令列表私訊給你！\n你是不是關閉了非好友私訊？');
+        });
+
       // msg.channel.send(data, { split: true });
     }
   },
