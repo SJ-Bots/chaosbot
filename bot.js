@@ -95,7 +95,7 @@ chaos.on('message', (msg) => {
     // else if (msg.content === '') chaos.commands.get('').execute(msg);
     // else return;
     // }
-  } else if (!command) return msg.channel.send(`沒有這條指令\`${msg}\``);
+  } else if (!command) return msg.channel.send(`沒有這條指令\`${msg.replace(${prefix}, '')}\``);
   else {
     if (command.guildOnly && msg.channel.type === 'dm') {
       return msg.reply('這條指令無法在DM執行!');
