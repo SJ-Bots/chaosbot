@@ -2,9 +2,9 @@ const Discord = require('discord.js');
 const chaos = new Discord.Client();
 const fs = require('fs');
 const mysql = require('mysql');
-const Levels = require('discord-xp');
-const Canvacord = require('canvacord');
-const image = getImageSomehow();
+// const Levels = require('discord-xp');
+// const Canvacord = require('canvacord');
+// const image = getImageSomehow();
 
 require('dotenv').config();
 
@@ -41,7 +41,7 @@ for (const folder of commandFolders) {
 chaos.on('ready', () => {
   chaos.user.setPresence({
     activity: {
-      name: 'Powered by 結城あやの | Using ?help',
+      name: `Powered by 結城あやの | Using ${prefix}help`,
       type: 'STREAMING',
     },
     status: 'dnd',
