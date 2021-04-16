@@ -7,7 +7,7 @@ const master = process.env.master;
 const address = process.env.address;
 const account = process.env.account;
 const password = process.env.password;
-const database = database;
+const database = process.envdatabase;
 
 const Discord = require('discord.js');
 const chaos = new Discord.Client();
