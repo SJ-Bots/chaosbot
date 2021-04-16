@@ -4,10 +4,12 @@ module.exports = {
   args: true,
   usage: '<難度> <等級>',
   guildOnly: false,
-  //   cooldown: 0,
+  // cooldown: 0,
   aliases: ['dan'],
-  //   permissions: '',
-  execute(msg, args, prefix, connection, command) {
+  // permissions: '',
+  needSQL: true,
+  authorOnly: false,
+  execute(msg, args, prefix, command, connection) {
     msg.channel.send('資料庫尚未完善\n無法使用本指令');
   },
 };

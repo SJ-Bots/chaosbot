@@ -1,8 +1,14 @@
 module.exports = {
   name: 'help',
-  description: '顯示指令幫助',
-  aliases: ['h', 'commands'],
+  description: '顯示指令幫助', args: false,
   usage: '[指令名稱]',
+  guildOnly: false,
+  // cooldown: 0,
+  // usage: '',
+  aliases: ['h', 'commands'],
+  // permissions: '',
+  needSQL: false,
+  authorOnly: false,
   execute(msg, args, prefix) {
     const data = [];
     const { commands } = msg.client;
