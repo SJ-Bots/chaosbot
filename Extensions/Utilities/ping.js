@@ -8,7 +8,7 @@ module.exports = {
   // cooldown: 0,
   // aliases: [''],
   // permissions: '',
-  needSQL: true,
+  needSQL: false,
   authorOnly: false,
   async execute(msg, args, prefix, command) {
     const waiting = await msg.channel.send('正在檢測延遲');
